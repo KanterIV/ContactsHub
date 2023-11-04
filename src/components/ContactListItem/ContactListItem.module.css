@@ -1,0 +1,15 @@
+.contactListItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.deleteBtn {
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: maroon;
+  color: aliceblue;
+}
