@@ -5,10 +5,6 @@ import Navigation from 'components/Navigation/Navigation';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
-// const Home = lazy(() => import('pages/Home'));
-// const Movies = lazy(() => import('pages/Movies'));
-// const MovieDetails = lazy(() => import('pages/MovieDetails'));
-
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
 const Login = lazy(() => import('pages/Login'));
