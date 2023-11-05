@@ -4,13 +4,19 @@ const contactsInstances = axios.create({
   baseURL: 'https://connections-api.herokuapp.com/',
 });
 
+export const setToken = token => {
+  contactsInstances.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 export const requestRegistration = async newUser => {
   const { data } = await contactsInstances.post('/users/signup', newUser);
+  setToken(data.token);
   return data;
 };
 
 export const requestLogin = async userData => {
   const { data } = await contactsInstances.post('/users/login', userData);
+  setToken(data.token);
   return data;
 };
 
