@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { newUserRegister } from 'redux/authReducer';
 
 const Register = () => {
   const {
@@ -9,9 +11,11 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  const dispatch = useDispatch();
+
   const onSubmit = data => {
+    dispatch(newUserRegister(data));
     reset();
-    console.log(data);
   };
 
   return (

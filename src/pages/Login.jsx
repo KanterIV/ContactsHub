@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { userLogin } from 'redux/authReducer';
 
 const Login = () => {
   const {
@@ -9,9 +11,11 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const dispatch = useDispatch();
+
   const onSubmit = data => {
+    dispatch(userLogin(data));
     reset();
-    console.log(data);
   };
 
   return (
