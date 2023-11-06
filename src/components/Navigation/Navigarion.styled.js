@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+  display: flex;
+
   border-bottom: 1px solid black;
   border-radius: 10px;
-  padding: 20px 0 20px 0;
+  padding: 20px 40px 20px 40px;
   margin-bottom: 50px;
 
   .header-nav {
