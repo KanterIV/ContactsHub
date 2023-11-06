@@ -54,7 +54,7 @@ export const ContactForm = () => {
 
     const contact = {
       name,
-      phone: number,
+      number,
     };
 
     handleAddContact(contact);
