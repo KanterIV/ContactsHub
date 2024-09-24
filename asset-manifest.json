@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ContactsHub/static/css/main.6ee7f789.css",
-    "main.js": "/ContactsHub/static/js/main.c4784925.js",
+    "main.js": "/ContactsHub/static/js/main.b015a83b.js",
     "static/js/415.676f02d0.chunk.js": "/ContactsHub/static/js/415.676f02d0.chunk.js",
     "static/js/285.efe37c1c.chunk.js": "/ContactsHub/static/js/285.efe37c1c.chunk.js",
     "static/js/38.d7a7f0f2.chunk.js": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/134.4cb0926e.chunk.js": "/ContactsHub/static/js/134.4cb0926e.chunk.js",
     "index.html": "/ContactsHub/index.html",
     "main.6ee7f789.css.map": "/ContactsHub/static/css/main.6ee7f789.css.map",
-    "main.c4784925.js.map": "/ContactsHub/static/js/main.c4784925.js.map",
+    "main.b015a83b.js.map": "/ContactsHub/static/js/main.b015a83b.js.map",
     "415.676f02d0.chunk.js.map": "/ContactsHub/static/js/415.676f02d0.chunk.js.map",
     "285.efe37c1c.chunk.js.map": "/ContactsHub/static/js/285.efe37c1c.chunk.js.map",
     "38.d7a7f0f2.chunk.js.map": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.6ee7f789.css",
-    "static/js/main.c4784925.js"
+    "static/js/main.b015a83b.js"
   ]
 }
