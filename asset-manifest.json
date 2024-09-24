@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.6ee7f789.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.42152387.js",
-    "static/js/415.676f02d0.chunk.js": "/goit-react-hw-08-phonebook/static/js/415.676f02d0.chunk.js",
-    "static/js/285.efe37c1c.chunk.js": "/goit-react-hw-08-phonebook/static/js/285.efe37c1c.chunk.js",
-    "static/js/38.d7a7f0f2.chunk.js": "/goit-react-hw-08-phonebook/static/js/38.d7a7f0f2.chunk.js",
-    "static/css/704.f310df4c.chunk.css": "/goit-react-hw-08-phonebook/static/css/704.f310df4c.chunk.css",
-    "static/js/704.42274ee0.chunk.js": "/goit-react-hw-08-phonebook/static/js/704.42274ee0.chunk.js",
-    "static/js/134.4cb0926e.chunk.js": "/goit-react-hw-08-phonebook/static/js/134.4cb0926e.chunk.js",
-    "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.6ee7f789.css.map": "/goit-react-hw-08-phonebook/static/css/main.6ee7f789.css.map",
-    "main.42152387.js.map": "/goit-react-hw-08-phonebook/static/js/main.42152387.js.map",
-    "415.676f02d0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/415.676f02d0.chunk.js.map",
-    "285.efe37c1c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/285.efe37c1c.chunk.js.map",
-    "38.d7a7f0f2.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/38.d7a7f0f2.chunk.js.map",
-    "704.f310df4c.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/704.f310df4c.chunk.css.map",
-    "704.42274ee0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/704.42274ee0.chunk.js.map",
-    "134.4cb0926e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/134.4cb0926e.chunk.js.map"
+    "main.css": "/ContactsHub/static/css/main.6ee7f789.css",
+    "main.js": "/ContactsHub/static/js/main.c4784925.js",
+    "static/js/415.676f02d0.chunk.js": "/ContactsHub/static/js/415.676f02d0.chunk.js",
+    "static/js/285.efe37c1c.chunk.js": "/ContactsHub/static/js/285.efe37c1c.chunk.js",
+    "static/js/38.d7a7f0f2.chunk.js": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js",
+    "static/css/704.f310df4c.chunk.css": "/ContactsHub/static/css/704.f310df4c.chunk.css",
+    "static/js/704.42274ee0.chunk.js": "/ContactsHub/static/js/704.42274ee0.chunk.js",
+    "static/js/134.4cb0926e.chunk.js": "/ContactsHub/static/js/134.4cb0926e.chunk.js",
+    "index.html": "/ContactsHub/index.html",
+    "main.6ee7f789.css.map": "/ContactsHub/static/css/main.6ee7f789.css.map",
+    "main.c4784925.js.map": "/ContactsHub/static/js/main.c4784925.js.map",
+    "415.676f02d0.chunk.js.map": "/ContactsHub/static/js/415.676f02d0.chunk.js.map",
+    "285.efe37c1c.chunk.js.map": "/ContactsHub/static/js/285.efe37c1c.chunk.js.map",
+    "38.d7a7f0f2.chunk.js.map": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js.map",
+    "704.f310df4c.chunk.css.map": "/ContactsHub/static/css/704.f310df4c.chunk.css.map",
+    "704.42274ee0.chunk.js.map": "/ContactsHub/static/js/704.42274ee0.chunk.js.map",
+    "134.4cb0926e.chunk.js.map": "/ContactsHub/static/js/134.4cb0926e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ee7f789.css",
-    "static/js/main.42152387.js"
+    "static/js/main.c4784925.js"
   ]
 }
