@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const contactsInstances = axios.create({
-  baseURL: 'https://connections-api.herokuapp.com/',
+  baseURL: 'https://contacts-reader-02va.onrender.com/api',
 });
 
 export const setToken = token => {
@@ -9,7 +9,7 @@ export const setToken = token => {
 };
 
 export const requestRegistration = async newUser => {
-  const { data } = await contactsInstances.post('/users/signup', newUser);
+  const { data } = await contactsInstances.post('/users/register', newUser);
   setToken(data.token);
   return data;
 };
