@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const contactsInstances = axios.create({
-  baseURL: 'http://localhost:4000/api',
-  // baseURL: 'https://contacts-reader-02va.onrender.com/api',
+  baseURL: 'https://contacts-reader-02va.onrender.com/api',
 });
 
 export const setToken = token => {
