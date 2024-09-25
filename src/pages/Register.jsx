@@ -21,14 +21,14 @@ const Register = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>
-        Email
-        <input {...register('email', { required: true })} type="email" />
-        {errors.email && <span>This field is required</span>}
-      </label>
-      <label>
         Name
         <input {...register('name', { required: true })} type="text" />
         {errors.name && <span>This field is required</span>}
+      </label>
+      <label>
+        Email
+        <input {...register('email', { required: true })} type="email" />
+        {errors.email && <span>This field is required</span>}
       </label>
       <label>
         Password

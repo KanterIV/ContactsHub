@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 import {
   requestLogin,
   requestLogout,
@@ -7,27 +6,18 @@ import {
   requestRegistration,
   setToken,
 } from 'services/api';
+import { toastFulfild, toastRejected } from 'services/userNotifications';
 
 export const newUserRegister = createAsyncThunk(
   'auth/register',
   async (newUserData, thunkAPI) => {
     try {
       const newUser = await requestRegistration(newUserData);
+      toastFulfild('User successfully created! Please confirm your e-mail.');
       return newUser;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong. We are already working on it!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -37,21 +27,11 @@ export const userLogin = createAsyncThunk(
   async (userData, thunkAPI) => {
     try {
       const newUser = await requestLogin(userData);
+      toastFulfild('You have successfully signed in !');
       return newUser;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong. We are already working on it!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -63,24 +43,12 @@ export const userRefresh = createAsyncThunk(
     const token = state.auth.token;
     try {
       setToken(token);
-
       const authData = await requestRefreshUser();
-
+      toastFulfild('You have successfully signed in !');
       return authData;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong. Please sign in again!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   },
   {
@@ -100,19 +68,8 @@ export const userLogout = createAsyncThunk(
       await requestLogout();
       return;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong, please try again later!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -129,55 +86,30 @@ const INITIAL_STATE = {
 };
 
 const authSlice = createSlice({
-  // Имя слайса
   name: 'auth',
-  // Начальное состояние редюсера слайса
   initialState: INITIAL_STATE,
 
   extraReducers: builder => {
     builder
-      //   .addCase(newUserRegister.pending, (state, action) => {
-      //     state.isLoading = true;
-      //     state.error = null;
-      //   })
       .addCase(newUserRegister.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.authenticated = true;
-        state.token = action.payload.token;
-        state.user = action.payload.user;
+        // state.authenticated = true;
+        // state.token = action.payload.token;
+        // state.user = action.payload.user;
       })
-      //   .addCase(newUserRegister.rejected, (state, action) => {
-      //     state.isLoading = false;
-      //     state.error = action.payload;
-      //   })
-      //   .addCase(userLogin.pending, (state, action) => {
-      //     state.isLoading = true;
-      //     state.error = null;
-      //   })
+
       .addCase(userLogin.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-      //   .addCase(userLogin.rejected, (state, action) => {
-      //     state.isLoading = false;
-      //     state.error = action.payload;
-      //   })
 
-      //   .addCase(userRefresh.pending, (state, action) => {
-      //     state.isLoading = true;
-      //     state.error = null;
-      //   })
       .addCase(userRefresh.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.user = action.payload;
       })
-      //   .addCase(userRefresh.rejected, (state, action) => {
-      //     state.isLoading = false;
-      //     state.error = action.payload;
-      //   })
 
       .addCase(userLogout.fulfilled, (state, action) => {
         return INITIAL_STATE;
@@ -210,5 +142,4 @@ const authSlice = createSlice({
   },
 });
 
-// Редюсер слайса
 export const authReducer = authSlice.reducer;
