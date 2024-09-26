@@ -1,106 +1,69 @@
-import { useState } from 'react';
-import css from './ContactForm.module.css';
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItems } from 'redux/contactsSelectors';
 import { addContact } from 'redux/contactsReducer';
-import { ToastContainer, toast } from 'react-toastify';
+import { toastRejected } from 'services/userNotifications';
+import css from './ContactForm.module.css';
 
 export const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-
   const dispatch = useDispatch();
   const contacts = useSelector(selectItems);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  const handleContactsInputChange = event => {
-    switch (event.target.name) {
-      case 'name':
-        setName(event.target.value);
-        break;
-
-      case 'number':
-        setNumber(event.target.value);
-        break;
-
-      default:
-        return;
-    }
-  };
-
-  const handleAddContact = contactData => {
+  const onSubmit = contactData => {
     const hasContactDuplicate = contacts.some(
       contact => contact.name.toLowerCase() === contactData.name.toLowerCase()
     );
 
     if (hasContactDuplicate) {
-      return toast.warning(`${contactData.name} is already in contacts`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-        toastId: 'errorMessage',
-      });
+      toastRejected(`${contactData.name} is already in your contacts!`);
+      return;
     }
 
     dispatch(addContact(contactData));
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    const contact = {
-      name,
-      number,
-    };
-
-    handleAddContact(contact);
-
-    setName('');
-    setNumber('');
+    reset();
   };
 
   return (
-    <>
-      {' '}
-      <form onSubmit={handleSubmit} className={css.contactsForm}>
-        <label>
-          Name
-          <input
-            className={css.contactsFormInput}
-            onChange={handleContactsInputChange}
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            value={name}
-            placeholder="Ivan Ivanov"
-            required
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            className={css.contactsFormInput}
-            onChange={handleContactsInputChange}
-            type="tel"
-            name="number"
-            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            value={number}
-            placeholder="123-45-67"
-            required
-          />
-        </label>
-
-        <button type="submit" className={css.contactsFormBtn}>
-          Add contact
-        </button>
-      </form>
-      <ToastContainer />
-    </>
+    <form onSubmit={handleSubmit(onSubmit)} className={css.contactsForm}>
+      <label>
+        Name
+        <input
+          {...register('name', { required: true })}
+          type="text"
+          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          placeholder="Alex"
+        />
+        {errors.name && <span>This field is required</span>}
+      </label>
+      <label>
+        Phone
+        <input
+          {...register('phone', { required: true })}
+          type="tel"
+          pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+          placeholder="066-123-45-67"
+        />
+        {errors.phone && <span>This field is required</span>}
+      </label>
+      <label>
+        Email
+        <input
+          {...register('email', { required: true })}
+          type="email"
+          placeholder="youremail@gmail.com"
+        />
+        {errors.email && <span>This field is required</span>}
+      </label>
+      <button type="submit" className={css.contactsFormBtn}>
+        Add contact
+      </button>
+    </form>
   );
 };

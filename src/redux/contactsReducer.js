@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 import {
   addNewContact,
   deleteNewContact,
   fetchAllContacts,
 } from 'services/api';
+import { toastFulfild, toastRejected } from 'services/userNotifications';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -13,19 +13,8 @@ export const fetchContacts = createAsyncThunk(
       const contacts = await fetchAllContacts();
       return contacts;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected("Unable to retrieve your contacts. We're working on it!");
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -35,21 +24,11 @@ export const addContact = createAsyncThunk(
   async (newContact, thunkAPI) => {
     try {
       const contact = await addNewContact(newContact);
+      toastFulfild('Your contact has been successfully added !');
       return contact;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong. We are already working on it!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -58,22 +37,12 @@ export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (contactId, thunkAPI) => {
     try {
-      const contact = await deleteNewContact(contactId);
-      return contact;
+      await deleteNewContact(contactId);
+      toastFulfild('The contact has been successfully deleted !');
+      return contactId;
     } catch (error) {
-      return thunkAPI.rejectWithValue(
-        toast.error('Something went wrong. We are already working on it', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
-          toastId: 'errorMessage',
-        })
-      );
+      toastRejected('Something went wrong. We are already working on it!');
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -88,11 +57,8 @@ const INITIAL_STATE = {
 };
 
 const contactsSlice = createSlice({
-  // Имя слайса
   name: 'contacts',
-  // Начальное состояние редюсера слайса
   initialState: INITIAL_STATE,
-  // Объект редюсеров
   reducers: {
     setFilter(state, action) {
       state.filter = action.payload;
@@ -111,7 +77,7 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.items = state.contacts.items.filter(
-          item => item.id !== action.payload.id
+          item => item._id !== action.payload
         );
       })
       .addMatcher(
@@ -139,7 +105,5 @@ const contactsSlice = createSlice({
   },
 });
 
-// Генераторы экшенов
 export const { setFilter } = contactsSlice.actions;
-// Редюсер слайса
 export const contactsReducer = contactsSlice.reducer;

@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { userRefresh } from 'redux/authReducer';
 import RestictedRoute from 'components/RestictedRoute/RestictedRoute';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import { ToastContainer } from 'react-toastify';
 
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
@@ -68,6 +69,7 @@ export const App = () => {
           </Routes>
         </Suspense>
       </div>
+      <ToastContainer />
     </>
   );
 };
