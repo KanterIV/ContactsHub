@@ -78,7 +78,9 @@ const INITIAL_STATE = {
   token: null,
   user: {
     email: null,
+    subscription: null,
     name: null,
+    avatar: null,
   },
   authenticated: false,
   isLoading: false,
@@ -93,9 +95,6 @@ const authSlice = createSlice({
     builder
       .addCase(newUserRegister.fulfilled, (state, action) => {
         state.isLoading = false;
-        // state.authenticated = true;
-        // state.token = action.payload.token;
-        // state.user = action.payload.user;
       })
 
       .addCase(userLogin.fulfilled, (state, action) => {

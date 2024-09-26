@@ -10,10 +10,11 @@ const UserMenu = () => {
     dispatch(userLogout());
   };
 
-  const { email } = useSelector(selectAuthUser);
+  const { name, avatar } = useSelector(selectAuthUser);
   return (
     <StyledUserMenu>
-      <p className="email">{email}</p>
+      <img className="avatar" src={`${avatar}`} alt="" />
+      <p className="email">{name}</p>
       <button className="logout-btn" onClick={handleLogOut} type="button">
         Logout
       </button>

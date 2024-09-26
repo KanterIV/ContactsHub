@@ -4,6 +4,13 @@ export const StyledUserMenu = styled.div`
   display: flex;
   align-items: center;
 
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
   .email {
     font-size: 18px;
     font-weight: bold;
