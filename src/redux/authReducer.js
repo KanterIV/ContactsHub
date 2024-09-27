@@ -80,7 +80,7 @@ const INITIAL_STATE = {
     email: null,
     subscription: null,
     name: null,
-    avatar: null,
+    avatarURL: null,
   },
   authenticated: false,
   isLoading: false,
