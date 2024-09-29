@@ -2,14 +2,14 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import React from 'react';
-import { Grid } from 'react-loader-spinner';
+// import { Grid } from 'react-loader-spinner';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { selectError, selectIsLoading } from 'redux/contactsSelectors';
+import { selectError } from 'redux/contactsSelectors';
 
 const Contacts = () => {
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   return (
@@ -19,7 +19,7 @@ const Contacts = () => {
       <h2>Contacts</h2>
       <Filter />
       <ContactList />
-      {isLoading && (
+      {/* {isLoading && (
         <Grid
           height="80"
           width="80"
@@ -30,7 +30,7 @@ const Contacts = () => {
           wrapperClass=""
           visible={true}
         />
-      )}
+      )} */}
       {error && <ToastContainer />}
     </>
   );

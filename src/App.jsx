@@ -1,14 +1,16 @@
 import css from './App.module.css';
-import { Grid } from 'react-loader-spinner';
 import 'react-toastify/dist/ReactToastify.css';
 import Navigation from 'components/Navigation/Navigation';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userRefresh } from 'redux/authReducer';
 import RestictedRoute from 'components/RestictedRoute/RestictedRoute';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
+import Loader from 'components/Loader/Loader';
+import { selectIsLoading } from 'redux/contactsSelectors';
+import { selectAuthIsLoading } from 'redux/authSelectors';
 
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
@@ -21,24 +23,14 @@ export const App = () => {
     dispatch(userRefresh());
   }, [dispatch]);
 
+  const authIsLoading = useSelector(selectIsLoading);
+  const contactIsLoading = useSelector(selectAuthIsLoading);
+
   return (
     <>
       <Navigation />
       <div className={css.wrapper}>
-        <Suspense
-          fallback={
-            <Grid
-              height="80"
-              width="80"
-              color="#4fa94d"
-              ariaLabel="grid-loading"
-              radius="12.5"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
-          }
-        >
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -70,6 +62,7 @@ export const App = () => {
         </Suspense>
       </div>
       <ToastContainer />
+      {authIsLoading || contactIsLoading ? <Loader /> : null}
     </>
   );
 };
