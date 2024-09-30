@@ -1,16 +1,13 @@
-import css from './App.module.css';
-import 'react-toastify/dist/ReactToastify.css';
-import Navigation from 'components/Navigation/Navigation';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userRefresh } from 'redux/authReducer';
+import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RestictedRoute from 'components/RestictedRoute/RestictedRoute';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
-import { ToastContainer } from 'react-toastify';
 import Loader from 'components/Loader/Loader';
-import { selectIsLoading } from 'redux/contactsSelectors';
-import { selectAuthIsLoading } from 'redux/authSelectors';
+import 'modern-normalize/modern-normalize.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
@@ -23,46 +20,38 @@ export const App = () => {
     dispatch(userRefresh());
   }, [dispatch]);
 
-  const authIsLoading = useSelector(selectIsLoading);
-  const contactIsLoading = useSelector(selectAuthIsLoading);
-
   return (
-    <>
-      <Navigation />
-      <div className={css.wrapper}>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/register"
-              element={
-                <RestictedRoute>
-                  <Register />
-                </RestictedRoute>
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <RestictedRoute>
-                  <Login />
-                </RestictedRoute>
-              }
-            />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute>
-                  <Contacts />
-                </PrivateRoute>
-              }
-            />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </Suspense>
-      </div>
-      <ToastContainer />
-      {authIsLoading || contactIsLoading ? <Loader /> : null}
-    </>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/register"
+            element={
+              <RestictedRoute>
+                <Register />
+              </RestictedRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestictedRoute>
+                <Login />
+              </RestictedRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <Contacts />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
