@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ContactsHub/static/css/main.cfb0cfd6.css",
-    "main.js": "/ContactsHub/static/js/main.67905470.js",
-    "static/js/415.676f02d0.chunk.js": "/ContactsHub/static/js/415.676f02d0.chunk.js",
+    "main.js": "/ContactsHub/static/js/main.28a4151a.js",
+    "static/js/579.53eab6bf.chunk.js": "/ContactsHub/static/js/579.53eab6bf.chunk.js",
     "static/js/285.fdaa9283.chunk.js": "/ContactsHub/static/js/285.fdaa9283.chunk.js",
     "static/js/38.d7a7f0f2.chunk.js": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js",
     "static/css/795.555ce23d.chunk.css": "/ContactsHub/static/css/795.555ce23d.chunk.css",
@@ -12,10 +12,11 @@
     "static/media/Roboto-Medium.ttf": "/ContactsHub/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/ContactsHub/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/ContactsHub/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/girl.png": "/ContactsHub/static/media/girl.4d5e9ae96b0c3c699f9e.png",
     "index.html": "/ContactsHub/index.html",
     "main.cfb0cfd6.css.map": "/ContactsHub/static/css/main.cfb0cfd6.css.map",
-    "main.67905470.js.map": "/ContactsHub/static/js/main.67905470.js.map",
-    "415.676f02d0.chunk.js.map": "/ContactsHub/static/js/415.676f02d0.chunk.js.map",
+    "main.28a4151a.js.map": "/ContactsHub/static/js/main.28a4151a.js.map",
+    "579.53eab6bf.chunk.js.map": "/ContactsHub/static/js/579.53eab6bf.chunk.js.map",
     "285.fdaa9283.chunk.js.map": "/ContactsHub/static/js/285.fdaa9283.chunk.js.map",
     "38.d7a7f0f2.chunk.js.map": "/ContactsHub/static/js/38.d7a7f0f2.chunk.js.map",
     "795.555ce23d.chunk.css.map": "/ContactsHub/static/css/795.555ce23d.chunk.css.map",
@@ -24,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.cfb0cfd6.css",
-    "static/js/main.67905470.js"
+    "static/js/main.28a4151a.js"
   ]
 }
