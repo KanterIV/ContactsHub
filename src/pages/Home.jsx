@@ -1,12 +1,7 @@
-import React from 'react';
+import WelcomePage from 'components/WelcomePage/WelcomePage';
 
 const Home = () => {
-  return (
-    <div>
-      Welcome to my contact book app. If you want to use the service, please
-      register and log in. Good luck!
-    </div>
-  );
+  return <WelcomePage />;
 };
 
 export default Home;
