@@ -1,5 +1,6 @@
+import MainAppPicture from 'components/MainAppPicture/MainAppPicture';
 import { useNavigate } from 'react-router-dom';
-import WelcomePageImg from '../../assets/images/girl.png';
+
 const WelcomePage = () => {
   const navigate = useNavigate();
 
@@ -8,6 +9,7 @@ const WelcomePage = () => {
   };
   return (
     <>
+      <MainAppPicture imgClass="initial-img" />
       <p>
         Welcome to the ContactsHub application! To use all the features of the
         app, please register and log in. Important: use a valid email address,
@@ -16,12 +18,6 @@ const WelcomePage = () => {
       <button type="button" onClick={() => onButtonClick()}>
         Let's get started
       </button>
-      <img
-        className="initialpage-picture"
-        src={WelcomePageImg}
-        alt="welcome page img"
-        width="626"
-      />
     </>
   );
 };
