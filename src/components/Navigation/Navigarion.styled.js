@@ -1,38 +1,44 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  display: flex;
-
-  border-bottom: 1px solid black;
-  border-radius: 10px;
-  padding: 20px 40px 20px 40px;
-  margin-bottom: 50px;
-
-  .header-nav {
-    width: 1400px;
-    margin: 0 auto;
-  }
-  .header-list {
+  .nav-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .header-link {
-    color: black;
-    border: 1px solid black;
-    display: inline-block;
-    padding: 15px;
-    font-size: 18px;
-    text-decoration: none;
-    margin-right: 20px;
-    border-radius: 10px;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
-    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &.active {
-      border: 1px solid white;
-      background-color: black;
-      color: white;
-      border-radius: 10px;
+    @media screen and (min-width: 768px) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      font-size: 22px;
+    }
+  }
+
+  .logo-svg {
+    width: 36px;
+    height: 36px;
+
+    @media screen and (min-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover,
+    &:focus {
+      scale: 1.05;
     }
   }
 `;

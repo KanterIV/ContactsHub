@@ -5,19 +5,28 @@ export const StyledUserMenu = styled.div`
   align-items: center;
 
   .avatar {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    margin-right: 10px;
+
+    @media screen and (min-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
   }
 
-  .email {
-    font-size: 18px;
-    font-weight: bold;
-    padding-right: 15px;
+  .user-name {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-right: 16px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+    }
   }
 
-  .logout-btn {
+  /* .logout-btn {
     color: black;
     border: 1px solid black;
     display: inline-block;
@@ -28,5 +37,5 @@ export const StyledUserMenu = styled.div`
     border-radius: 10px;
 
     transition: all 0.3s;
-  }
+  } */
 `;
