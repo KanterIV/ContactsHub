@@ -5,8 +5,8 @@ import {
   requestRefreshUser,
   requestRegistration,
   setToken,
-} from 'services/api';
-import { toastFulfild, toastRejected } from 'services/userNotifications';
+} from 'utils/helpers/api';
+import { toastFulfild, toastRejected } from 'utils/helpers/userNotifications';
 
 export const newUserRegister = createAsyncThunk(
   'auth/register',

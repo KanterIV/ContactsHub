@@ -3,8 +3,8 @@ import {
   addNewContact,
   deleteNewContact,
   fetchAllContacts,
-} from 'services/api';
-import { toastFulfild, toastRejected } from 'services/userNotifications';
+} from 'utils/helpers/api';
+import { toastFulfild, toastRejected } from 'utils/helpers/userNotifications';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',

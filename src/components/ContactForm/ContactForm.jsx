@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItems } from 'redux/contactsSelectors';
 import { addContact } from 'redux/contactsReducer';
-import { toastRejected } from 'services/userNotifications';
+import { toastRejected } from 'utils/helpers/userNotifications';
 import css from './ContactForm.module.css';
 
 export const ContactForm = () => {

@@ -1,9 +1,11 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import MainAppPicture from 'components/MainAppPicture/MainAppPicture';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { userLogin } from 'redux/authReducer';
+import { loginSchema } from 'utils/helpers/schemas/loginSchema';
 
 const Login = () => {
   const {
@@ -11,7 +13,7 @@ const Login = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(loginSchema), mode: 'onTouched' });
 
   const dispatch = useDispatch();
 
@@ -30,20 +32,28 @@ const Login = () => {
         </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>
-            Email
-            <input {...register('email', { required: true })} type="email" />
-            {errors.email && <span>This field is required</span>}
+            <input
+              {...register('email')}
+              className={`input ${errors.email ? 'error-input' : ''} `}
+              type="email"
+              placeholder="Email"
+            />
+            {errors.email && <span>{errors.email?.message}</span>}
           </label>
           <label>
-            Password
-            <input {...register('password', { required: true })} type="text" />
-            {errors.password && <span>This field is required</span>}
+            <input
+              {...register('password')}
+              className={`input ${errors.password ? 'error-input' : ''} `}
+              type="text"
+              placeholder="Password"
+            />
+            {errors.password && <span>{errors.password?.message}</span>}
           </label>
 
           <button type="submit">Sign In</button>
         </form>
         <Link className="register-link" to="/register">
-          Login
+          Register
         </Link>
       </div>
     </>

@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { newUserRegister } from 'redux/authReducer';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { registerSchema } from 'utils/helpers/schemas/registerSchema';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,7 +13,10 @@ const Register = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+    mode: 'onTouched',
+  });
 
   const dispatch = useDispatch();
 
@@ -34,26 +39,31 @@ const Register = () => {
         </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>
-            Name
-            <input {...register('name', { required: true })} type="text" />
-            {errors.name && <span>This field is required</span>}
-          </label>
-          <label>
-            Email
-            <input {...register('email', { required: true })} type="email" />
-            {errors.email && <span>This field is required</span>}
-          </label>
-          <label>
-            Password
             <input
-              {...register('password', { required: true, minLength: 7 })}
+              {...register('name')}
+              className={`input ${errors.name ? 'error-input' : ''} `}
               type="text"
+              placeholder="Name"
             />
-            {errors.password && (
-              <span>
-                Password cannot be an empty term, minimum length is 7 characters
-              </span>
-            )}
+            {errors.name && <span>{errors.name?.message}</span>}
+          </label>
+          <label>
+            <input
+              {...register('email')}
+              className={`input ${errors.email ? 'error-input' : ''} `}
+              type="email"
+              placeholder="Email"
+            />
+            {errors.email && <span>{errors.email?.message}</span>}
+          </label>
+          <label>
+            <input
+              {...register('password')}
+              className={`input ${errors.password ? 'error-input' : ''} `}
+              type="text"
+              placeholder="Password"
+            />
+            {errors.password && <span>{errors.password?.message}</span>}
           </label>
 
           <button type="submit">Register</button>
