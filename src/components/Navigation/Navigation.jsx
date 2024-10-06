@@ -6,6 +6,7 @@ import { selectAuthAuthenticated } from 'redux/authSelectors';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 import { ReactComponent as AppLogo } from '../../assets/icons/logo.svg';
+// import DropdownMenu from 'components/DropdownMenu/DropdownMenu';
 
 const Navigation = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
@@ -18,6 +19,7 @@ const Navigation = () => {
           ContactsHub
         </Link>
         {authenticated && <UserMenu />}
+        {/* <DropdownMenu /> */}
       </div>
     </StyledHeader>
   );

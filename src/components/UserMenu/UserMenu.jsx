@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { userLogout } from 'redux/authReducer';
 import { selectAuthUser } from 'redux/authSelectors';
 import { StyledUserMenu } from './UserMenu.styled';
+import { ReactComponent as ArrowIcon } from '../../assets/icons/downarrow.svg';
+import DropdownMenu from 'components/DropdownMenu/DropdownMenu';
 
 const UserMenu = () => {
-  // const dispatch = useDispatch();
-  // const handleLogOut = () => {
-  //   dispatch(userLogout());
-  // };
-
   const { name, avatarURL } = useSelector(selectAuthUser);
+  const [dropdownMenu, setDropdownMenu] = useState(false);
+  const userBtnRef = useRef(null);
+  const handleDropdownStatus = () => {
+    setDropdownMenu(prevState => !prevState);
+  };
   return (
     <StyledUserMenu>
       <p className="user-name">{name}</p>
-      <img className="avatar" src={`${avatarURL}`} alt="user avatar" />
-      {/* <button className="logout-btn" onClick={handleLogOut} type="button">
-        Logout
-      </button> */}
+      <button
+        className="user-btn"
+        ref={userBtnRef}
+        onClick={() => handleDropdownStatus()}
+      >
+        <img className="avatar" src={`${avatarURL}`} alt="user avatar" />
+        <ArrowIcon className="dropdown-icon" />
+      </button>
+
+      {dropdownMenu && (
+        <DropdownMenu
+          userBtnRef={userBtnRef}
+          dropdownMenu={dropdownMenu}
+          setDropdownMenu={setDropdownMenu}
+        />
+      )}
     </StyledUserMenu>
   );
 };
