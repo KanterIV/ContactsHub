@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyledHeader } from './Navigarion.styled';
+import { StyledHeader } from './Navigation.styled';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAuthAuthenticated } from 'redux/authSelectors';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 import { ReactComponent as AppLogo } from '../../assets/icons/logo.svg';
-// import DropdownMenu from 'components/DropdownMenu/DropdownMenu';
 
 const Navigation = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
@@ -16,10 +15,11 @@ const Navigation = () => {
       <div className="container nav-container">
         <Link className="logo" to="/">
           <AppLogo className="logo-svg" />
-          ContactsHub
+          <p>
+            Contacts<span className="logo-accent">Hub</span>
+          </p>
         </Link>
         {authenticated && <UserMenu />}
-        {/* <DropdownMenu /> */}
       </div>
     </StyledHeader>
   );

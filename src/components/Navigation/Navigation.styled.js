@@ -25,6 +25,13 @@ export const StyledHeader = styled.header`
       padding-bottom: 24px;
       font-size: 22px;
     }
+
+    .logo-accent {
+      padding: 0 4px 0 4px;
+      background-color: var(--logo-accent);
+      border-radius: 6px;
+      color: var(--secondary-wite);
+    }
   }
 
   .logo-svg {

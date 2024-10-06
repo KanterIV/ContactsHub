@@ -1,10 +1,14 @@
 :root {
-  --primary-white: #ffffff;
+  --primary-white: #f8f8f8;
+  --secondary-wite: #fcfcfc;
+  --primary-black: #121417;
+  --logo-accent: #f0d507;
 }
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  color: var(--primary-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
