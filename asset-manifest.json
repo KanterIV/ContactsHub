@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/ContactsHub/static/css/main.fd16218d.css",
-    "main.js": "/ContactsHub/static/js/main.6805cf62.js",
-    "static/js/925.f1f8c401.chunk.js": "/ContactsHub/static/js/925.f1f8c401.chunk.js",
-    "static/js/844.71a2dff6.chunk.js": "/ContactsHub/static/js/844.71a2dff6.chunk.js",
-    "static/js/344.1aad7bc7.chunk.js": "/ContactsHub/static/js/344.1aad7bc7.chunk.js",
+    "main.css": "/ContactsHub/static/css/main.77aa162b.css",
+    "main.js": "/ContactsHub/static/js/main.f7157b6b.js",
+    "static/js/925.e029120f.chunk.js": "/ContactsHub/static/js/925.e029120f.chunk.js",
+    "static/js/638.1e3c22e1.chunk.js": "/ContactsHub/static/js/638.1e3c22e1.chunk.js",
+    "static/js/344.c2c8c639.chunk.js": "/ContactsHub/static/js/344.c2c8c639.chunk.js",
     "static/css/795.555ce23d.chunk.css": "/ContactsHub/static/css/795.555ce23d.chunk.css",
     "static/js/795.d46aab52.chunk.js": "/ContactsHub/static/js/795.d46aab52.chunk.js",
     "static/js/134.16b641c9.chunk.js": "/ContactsHub/static/js/134.16b641c9.chunk.js",
@@ -15,20 +15,23 @@
     "static/media/Roboto-Bold.ttf": "/ContactsHub/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/girl.png": "/ContactsHub/static/media/girl.c8076fb069f94fef7525.png",
     "static/media/logo.svg": "/ContactsHub/static/media/logo.91de01a39f6d5ab61af45ec0b76374a8.svg",
+    "static/media/eye-off.svg": "/ContactsHub/static/media/eye-off.d80c0c81e2ece432823089da7923bfab.svg",
     "index.html": "/ContactsHub/index.html",
+    "static/media/eye.svg": "/ContactsHub/static/media/eye.94ae9d565cb68513a7ca6bbefe776eab.svg",
+    "static/media/error.svg": "/ContactsHub/static/media/error.109ab1b9da5e10094051a0353894de95.svg",
     "static/media/downarrow.svg": "/ContactsHub/static/media/downarrow.78e147ff430355be7c43a08bf924166a.svg",
-    "main.fd16218d.css.map": "/ContactsHub/static/css/main.fd16218d.css.map",
-    "main.6805cf62.js.map": "/ContactsHub/static/js/main.6805cf62.js.map",
-    "925.f1f8c401.chunk.js.map": "/ContactsHub/static/js/925.f1f8c401.chunk.js.map",
-    "844.71a2dff6.chunk.js.map": "/ContactsHub/static/js/844.71a2dff6.chunk.js.map",
-    "344.1aad7bc7.chunk.js.map": "/ContactsHub/static/js/344.1aad7bc7.chunk.js.map",
+    "main.77aa162b.css.map": "/ContactsHub/static/css/main.77aa162b.css.map",
+    "main.f7157b6b.js.map": "/ContactsHub/static/js/main.f7157b6b.js.map",
+    "925.e029120f.chunk.js.map": "/ContactsHub/static/js/925.e029120f.chunk.js.map",
+    "638.1e3c22e1.chunk.js.map": "/ContactsHub/static/js/638.1e3c22e1.chunk.js.map",
+    "344.c2c8c639.chunk.js.map": "/ContactsHub/static/js/344.c2c8c639.chunk.js.map",
     "795.555ce23d.chunk.css.map": "/ContactsHub/static/css/795.555ce23d.chunk.css.map",
     "795.d46aab52.chunk.js.map": "/ContactsHub/static/js/795.d46aab52.chunk.js.map",
     "134.16b641c9.chunk.js.map": "/ContactsHub/static/js/134.16b641c9.chunk.js.map",
     "586.7eed251e.chunk.js.map": "/ContactsHub/static/js/586.7eed251e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd16218d.css",
-    "static/js/main.6805cf62.js"
+    "static/css/main.77aa162b.css",
+    "static/js/main.f7157b6b.js"
   ]
 }
