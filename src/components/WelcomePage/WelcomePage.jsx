@@ -1,4 +1,5 @@
 import MainAppPicture from 'components/MainAppPicture/MainAppPicture';
+import Button from 'components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { StyledWelcomePage } from './WelcomPage.styled';
 
@@ -21,13 +22,13 @@ const WelcomePage = () => {
           app, please register and log in. Important: use a valid email address,
           as verification is required for access. Enjoy!
         </p>
-        <button
-          className="welcome-btn"
-          type="button"
-          onClick={() => onButtonClick()}
+        <Button
+          styledClass="welcome-btn"
+          buttonType="button"
+          onClickFunction={onButtonClick}
         >
           Let's get started
-        </button>
+        </Button>
       </div>
     </StyledWelcomePage>
   );

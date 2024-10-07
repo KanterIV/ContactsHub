@@ -16,4 +16,14 @@ export const StyledAppPicture = styled.img`
   @media screen and (min-width: 1440px) {
     width: 498px;
   }
+
+  &.register-img {
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+      display: none;
+    }
+
+    @media screen and(min-width: 1440px) {
+      height: 475px;
+    }
+  }
 `;

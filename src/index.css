@@ -3,6 +3,10 @@
   --secondary-wite: #fcfcfc;
   --primary-black: #121417;
   --logo-accent: #f0d507;
+  --black-for-text: rgba(18, 20, 23, 0.8);
+  --input-border-color: rgba(18, 20, 23, 0.1);
+  --error-color: #d80027;
+  --grey-modal: rgba(133, 170, 159, 0.1);
 }
 
 body {
@@ -109,6 +113,14 @@ img {
 @media screen and (min-width: 376px) {
   .container {
     width: 344px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .container {
+    width: 388px;
     margin-left: auto;
     margin-right: auto;
   }
