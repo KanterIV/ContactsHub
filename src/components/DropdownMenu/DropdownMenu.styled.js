@@ -23,6 +23,7 @@ export const StyledDropdownMenu = styled.ul`
     text-align: left;
     border: none;
     background-color: transparent;
+    color: var(--black-for-text);
 
     &:hover,
     &:focus {

@@ -26,4 +26,14 @@ export const StyledAppPicture = styled.img`
       height: 475px;
     }
   }
+
+  &.login-img {
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+      display: none;
+    }
+
+    @media screen and(min-width: 1440px) {
+      height: 475px;
+    }
+  }
 `;
