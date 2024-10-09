@@ -20,7 +20,7 @@ export const ContactList = () => {
 
   return (
     <StyledContactsList>
-      {contactsArr.length !== 0 &&
+      {contactsArr.length !== 0 ? (
         contactsArr.map(contact => {
           const { _id, name, phone } = contact;
           return (
@@ -32,7 +32,12 @@ export const ContactList = () => {
               deleteContact={hanldeDeleteContact}
             />
           );
-        })}
+        })
+      ) : (
+        <h2 className="title-nothing">
+          There's nothing here yet. Add a new contact using the form.
+        </h2>
+      )}
     </StyledContactsList>
   );
 };

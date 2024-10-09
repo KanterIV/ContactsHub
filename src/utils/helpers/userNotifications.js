@@ -1,8 +1,8 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const toastSettings = {
-  autoClose: 4000,
-  position: 'top-right',
+  autoClose: 3500,
+  position: 'top-center',
   theme: 'colored',
 };
 

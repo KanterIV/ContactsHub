@@ -42,7 +42,7 @@ const DropdownMenu = ({ dropdownMenu, setDropdownMenu, userBtnRef }) => {
     <StyledDropdownMenu ref={dropdownRef}>
       <li className="dropdown-list-item">
         <button className="button profile-btn" type="button">
-          Profile
+          Profile <span className="soon">soon</span>
         </button>
       </li>
       <li>

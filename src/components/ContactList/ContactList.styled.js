@@ -18,6 +18,15 @@ export const StyledContactsList = styled.ul`
     height: 365px;
   }
 
+  .title-nothing {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.07;
+    letter-spacing: -0.02em;
+    color: var(--primary-black);
+  }
+
   li:nth-child(odd) {
     background-color: var(--secondary-wite);
   }

@@ -24,9 +24,21 @@ export const StyledDropdownMenu = styled.ul`
     border: none;
     background-color: transparent;
     color: var(--black-for-text);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus {
+      color: var(--logo-accent);
     }
+  }
+
+  .profile-btn {
+    display: flex;
+    gap: 4px;
+  }
+
+  .soon {
+    font-size: 10px;
+    color: var(--logo-accent);
   }
 `;

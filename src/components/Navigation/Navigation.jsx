@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <StyledHeader>
       <div className="container nav-container">
-        <Link className="logo" to="/">
+        <Link className="logo" to="/contacts">
           <AppLogo className="logo-svg" />
           <p>
             Contacts<span className="logo-accent">Hub</span>
