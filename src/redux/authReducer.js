@@ -44,7 +44,6 @@ export const userRefresh = createAsyncThunk(
     try {
       setToken(token);
       const authData = await requestRefreshUser();
-      // toastFulfild('You have successfully signed in !');
       return authData;
     } catch (error) {
       toastRejected('Something went wrong. Please sign in again!');
