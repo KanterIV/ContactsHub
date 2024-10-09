@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/ContactsHub/static/css/main.77aa162b.css",
-    "main.js": "/ContactsHub/static/js/main.d02d1c13.js",
+    "main.js": "/ContactsHub/static/js/main.c5f1a0a4.js",
     "static/js/925.0e698ba5.chunk.js": "/ContactsHub/static/js/925.0e698ba5.chunk.js",
     "static/js/1.0322b546.chunk.js": "/ContactsHub/static/js/1.0322b546.chunk.js",
     "static/js/536.2092e7a9.chunk.js": "/ContactsHub/static/js/536.2092e7a9.chunk.js",
-    "static/js/802.03ca5c17.chunk.js": "/ContactsHub/static/js/802.03ca5c17.chunk.js",
+    "static/js/802.1a56c16a.chunk.js": "/ContactsHub/static/js/802.1a56c16a.chunk.js",
     "static/js/586.4f7c2434.chunk.js": "/ContactsHub/static/js/586.4f7c2434.chunk.js",
     "static/media/Roboto-Italic.ttf": "/ContactsHub/static/media/Roboto-Italic.87f3afe16a8c3c370634.ttf",
     "static/media/Roboto-Medium.ttf": "/ContactsHub/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
@@ -23,15 +23,15 @@
     "static/media/downarrow.svg": "/ContactsHub/static/media/downarrow.78e147ff430355be7c43a08bf924166a.svg",
     "static/media/plus.svg": "/ContactsHub/static/media/plus.8b36a880457901093cd616a1e179e095.svg",
     "main.77aa162b.css.map": "/ContactsHub/static/css/main.77aa162b.css.map",
-    "main.d02d1c13.js.map": "/ContactsHub/static/js/main.d02d1c13.js.map",
+    "main.c5f1a0a4.js.map": "/ContactsHub/static/js/main.c5f1a0a4.js.map",
     "925.0e698ba5.chunk.js.map": "/ContactsHub/static/js/925.0e698ba5.chunk.js.map",
     "1.0322b546.chunk.js.map": "/ContactsHub/static/js/1.0322b546.chunk.js.map",
     "536.2092e7a9.chunk.js.map": "/ContactsHub/static/js/536.2092e7a9.chunk.js.map",
-    "802.03ca5c17.chunk.js.map": "/ContactsHub/static/js/802.03ca5c17.chunk.js.map",
+    "802.1a56c16a.chunk.js.map": "/ContactsHub/static/js/802.1a56c16a.chunk.js.map",
     "586.4f7c2434.chunk.js.map": "/ContactsHub/static/js/586.4f7c2434.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77aa162b.css",
-    "static/js/main.d02d1c13.js"
+    "static/js/main.c5f1a0a4.js"
   ]
 }
