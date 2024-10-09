@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import css from './Filter.module.css';
 import { setFilter } from 'redux/contactsReducer';
+import { StyledFilterInput } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -10,14 +10,12 @@ export const Filter = () => {
   };
 
   return (
-    <>
-      <p>Fined contacts by name</p>
-      <input
-        className={css.filterInput}
-        onChange={handleFilterInputChange}
-        type="text"
-        name="filter"
-      />
-    </>
+    <StyledFilterInput
+      className="filter-input"
+      onChange={handleFilterInputChange}
+      type="text"
+      placeholder="Find contact..."
+      name="filter"
+    />
   );
 };

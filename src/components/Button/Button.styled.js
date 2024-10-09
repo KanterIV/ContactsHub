@@ -37,4 +37,17 @@ export const StyledButton = styled.button`
       margin: 0;
     }
   }
+
+  &.contact-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;

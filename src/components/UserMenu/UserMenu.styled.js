@@ -30,7 +30,7 @@ export const StyledUserMenu = styled.div`
     border-radius: 50%;
 
     @media screen and (min-width: 768px) {
-      width: 48px;
+      min-width: 48px;
       height: 48px;
     }
   }

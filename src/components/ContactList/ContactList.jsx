@@ -1,9 +1,9 @@
-import css from './ContactsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { deleteContact, fetchContacts } from 'redux/contactsReducer';
 import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 import { selectVisibleContacts } from 'redux/contactsSelectors';
+import { StyledContactsList } from './ContactList.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const ContactList = () => {
   };
 
   return (
-    <ul className={css.contactsList}>
+    <StyledContactsList>
       {contactsArr.length !== 0 &&
         contactsArr.map(contact => {
           const { _id, name, phone } = contact;
@@ -33,6 +33,6 @@ export const ContactList = () => {
             />
           );
         })}
-    </ul>
+    </StyledContactsList>
   );
 };

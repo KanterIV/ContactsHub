@@ -2,8 +2,14 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItems } from 'redux/contactsSelectors';
 import { addContact } from 'redux/contactsReducer';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { contactSchema } from 'utils/helpers/schemas/contactSchema';
 import { toastRejected } from 'utils/helpers/userNotifications';
-import css from './ContactForm.module.css';
+import Button from 'components/Button/Button';
+import { StyledContactForm } from './ContactForm.styled';
+
+import { ReactComponent as IconPlus } from '../../assets/icons/plus.svg';
+import { ReactComponent as IconError } from '../../assets/icons/error.svg';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -13,7 +19,7 @@ export const ContactForm = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(contactSchema), mode: 'onTouched' });
 
   const onSubmit = contactData => {
     const hasContactDuplicate = contacts.some(
@@ -30,40 +36,56 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={css.contactsForm}>
-      <label>
-        Name
-        <input
-          {...register('name', { required: true })}
-          type="text"
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          placeholder="Alex"
-        />
-        {errors.name && <span>This field is required</span>}
-      </label>
-      <label>
-        Phone
-        <input
-          {...register('phone', { required: true })}
-          type="tel"
-          pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-          placeholder="066-123-45-67"
-        />
-        {errors.phone && <span>This field is required</span>}
-      </label>
-      <label>
-        Email
-        <input
-          {...register('email', { required: true })}
-          type="email"
-          placeholder="youremail@gmail.com"
-        />
-        {errors.email && <span>This field is required</span>}
-      </label>
-      <button type="submit" className={css.contactsFormBtn}>
-        Add contact
-      </button>
-    </form>
+    <StyledContactForm>
+      <h2 className="contact-form-title">Add a new contact to your list</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-wrapper">
+          <input
+            {...register('name')}
+            className={`input ${errors.name ? 'error-input' : ''} `}
+            type="text"
+            placeholder="Name..."
+          />
+          {errors.name && (
+            <div className="error">
+              <IconError />
+              {errors.name?.message}
+            </div>
+          )}
+        </div>
+        <div className="input-wrapper">
+          <input
+            {...register('phone')}
+            className={`input ${errors.name ? 'error-input' : ''} `}
+            type="tel"
+            placeholder="Phone number..."
+          />
+          {errors.phone && (
+            <div className="error">
+              <IconError />
+              {errors.phone?.message}
+            </div>
+          )}
+        </div>
+        <div className="input-wrapper">
+          <input
+            {...register('email')}
+            className={`input ${errors.name ? 'error-input' : ''} `}
+            type="email"
+            placeholder="E-mail..."
+          />
+          {errors.email && (
+            <div className="error">
+              <IconError />
+              {errors.email?.message}
+            </div>
+          )}
+        </div>
+        <Button styledClass="form-btn contact-form-btn" buttonType="submit">
+          <IconPlus />
+          Add contact
+        </Button>
+      </form>
+    </StyledContactForm>
   );
 };
