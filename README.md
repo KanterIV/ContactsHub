@@ -142,7 +142,7 @@ implemented by the developer.
 ## Backend проекту
 
 Backend для застосунку також був розроблений мною. Ви можете переглянути його
-запосиланням: [GitHub](https://github.com/KanterIV/NodeJs-homework-2-6).
+запосиланням: [GitHub](https://github.com/KanterIV/ContactsHub-backend).
 
 ## Деплой
 
