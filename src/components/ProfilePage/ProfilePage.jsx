@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthUser } from 'redux/authSelectors';
 import { IconButton } from '@mui/material';
 import { userUpdateAvatar } from 'redux/authReducer';
+import { getCurrentAvatarUrl } from 'utils/helpers/avatarUrlCheck';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const { avatarURL, email, name, subscription } = useSelector(selectAuthUser);
 
   const handleUserAvatarChange = event => {
-    console.log(123);
     const file = event.target.files[0];
     dispatch(userUpdateAvatar(file));
   };
@@ -30,7 +30,7 @@ const ProfilePage = () => {
             <IconButton className="upload-button" component="span">
               <img
                 className="avatar-img"
-                src={`https://contacts-reader-02va.onrender.com/${avatarURL}`}
+                src={getCurrentAvatarUrl(avatarURL)}
                 alt="avarat"
               />
             </IconButton>

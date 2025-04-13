@@ -7,6 +7,7 @@ import DropdownMenu from 'components/DropdownMenu/DropdownMenu';
 import { Filter } from 'components/Filter/Filter';
 import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import { getCurrentAvatarUrl } from 'utils/helpers/avatarUrlCheck';
 
 const UserMenu = () => {
   const { pathname } = useLocation();
@@ -27,7 +28,11 @@ const UserMenu = () => {
         ref={userBtnRef}
         onClick={() => handleDropdownStatus()}
       >
-        <img className="avatar" src={`${avatarURL}`} alt="user avatar" />
+        <img
+          className="avatar"
+          src={getCurrentAvatarUrl(avatarURL)}
+          alt="user avatar"
+        />
         <ArrowIcon className="dropdown-icon" />
       </button>
 
