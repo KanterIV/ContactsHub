@@ -31,14 +31,4 @@ export const StyledDropdownMenu = styled.ul`
       color: var(--logo-accent);
     }
   }
-
-  .profile-btn {
-    display: flex;
-    gap: 4px;
-  }
-
-  .soon {
-    font-size: 10px;
-    color: var(--logo-accent);
-  }
 `;

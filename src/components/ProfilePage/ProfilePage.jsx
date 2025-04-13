@@ -19,6 +19,11 @@ const ProfilePage = () => {
     <StyledProfilePage className="container">
       <div className="wrapper">
         <div className="avatar-wrapper">
+          <h2 className="profile-header">Profile</h2>
+          <p className="profile-user-status">
+            {`Subscription type: `}
+            <span className="profile-user-status-value">{subscription}</span>
+          </p>
           <label className="avatar-label">
             <input
               className="avatar-input"

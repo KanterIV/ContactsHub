@@ -1,42 +1,59 @@
 import styled from 'styled-components';
 
 export const StyledProfilePage = styled.div`
-  /* .wrapper {
+  .wrapper {
     display: flex;
     flex-direction: column;
     gap: 26px;
 
-    @media screen and (min-width: 1440px) {
-      flex-direction: row-reverse;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
     }
-  } */
+  }
+  .avatar-wrapper {
+    min-width: 200px;
+  }
 
+  .profile-header {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .profile-user-status {
+    font-size: 14px;
+    color: rgb(109, 103, 119);
+    margin-bottom: 20px;
+  }
+  .profile-user-status-value {
+    font-size: 14px;
+    color: var(--logo-accent);
+  }
   .avatar-input {
     display: none;
   }
   .upload-button {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     display: flex;
-    border: 1px dashed #c9d0d8;
+    border: 1px dashed var(--input-border-color);
     border-style: dashed;
     border-width: 2px;
-    border-color: #c9d0d8;
+    border-color: var(--input-border-color);
     border-spacing: 40px;
     align-items: center;
     justify-content: center;
   }
 
   .avatar-img {
-    width: 88px;
-    height: 88px;
+    width: 104px;
+    height: 104px;
     border-radius: 50%;
   }
   .inputs-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
   .input-label {
     display: block;

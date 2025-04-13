@@ -43,6 +43,18 @@ const DropdownMenu = ({ dropdownMenu, setDropdownMenu, userBtnRef }) => {
   return (
     <StyledDropdownMenu ref={dropdownRef}>
       <li className="dropdown-list-item">
+        <li className="dropdown-list-item">
+          <button
+            className="button profile-btn"
+            type="button"
+            onClick={() => {
+              navigate('/contacts');
+              setDropdownMenu(false);
+            }}
+          >
+            Contacts
+          </button>
+        </li>
         <button
           className="button profile-btn"
           type="button"
@@ -51,7 +63,7 @@ const DropdownMenu = ({ dropdownMenu, setDropdownMenu, userBtnRef }) => {
             setDropdownMenu(false);
           }}
         >
-          Profile <span className="soon">soon</span>
+          Profile
         </button>
       </li>
       <li>
