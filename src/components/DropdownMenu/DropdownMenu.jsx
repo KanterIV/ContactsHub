@@ -2,9 +2,11 @@ import { userLogout } from 'redux/authReducer';
 import { StyledDropdownMenu } from './DropdownMenu.styled';
 import { useDispatch } from 'react-redux';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const DropdownMenu = ({ dropdownMenu, setDropdownMenu, userBtnRef }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const dropdownRef = useRef(null);
   const handleLogOut = () => {
     setDropdownMenu(false);
@@ -41,7 +43,14 @@ const DropdownMenu = ({ dropdownMenu, setDropdownMenu, userBtnRef }) => {
   return (
     <StyledDropdownMenu ref={dropdownRef}>
       <li className="dropdown-list-item">
-        <button className="button profile-btn" type="button">
+        <button
+          className="button profile-btn"
+          type="button"
+          onClick={() => {
+            navigate('/profile');
+            setDropdownMenu(false);
+          }}
+        >
           Profile <span className="soon">soon</span>
         </button>
       </li>

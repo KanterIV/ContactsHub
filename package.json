@@ -4,7 +4,10 @@
   "private": true,
   "homepage": "https://KanterIV.github.io/ContactsHub/",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.9.0",
+    "@mui/material": "^7.0.2",
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

@@ -30,6 +30,13 @@ export const requestRefreshUser = async () => {
   return data;
 };
 
+export const requestUserAvatarUpdate = async formData => {
+  const { data } = await contactsInstances.patch('/users/avatars', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+  return data;
+};
+
 export const fetchAllContacts = async () => {
   const { data } = await contactsInstances.get('/contacts');
   return data;

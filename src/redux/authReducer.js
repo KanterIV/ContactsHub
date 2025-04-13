@@ -4,6 +4,7 @@ import {
   requestLogout,
   requestRefreshUser,
   requestRegistration,
+  requestUserAvatarUpdate,
   setToken,
 } from 'utils/helpers/api';
 import { toastFulfild, toastRejected } from 'utils/helpers/userNotifications';
@@ -60,6 +61,22 @@ export const userRefresh = createAsyncThunk(
   }
 );
 
+export const userUpdateAvatar = createAsyncThunk(
+  'auth/updateAvatar',
+  async (file, thunkAPI) => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', file);
+      const res = await requestUserAvatarUpdate(formData);
+      toastFulfild('Your avatar was successfully updated !');
+      return res.avatarURL;
+    } catch (error) {
+      toastRejected('Something went wrong. We are already working on it!');
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const userLogout = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
@@ -108,6 +125,11 @@ const authSlice = createSlice({
         state.authenticated = true;
         state.user = action.payload;
       })
+      .addCase(userUpdateAvatar.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.authenticated = true;
+        state.user.avatarURL = action.payload;
+      })
 
       .addCase(userLogout.fulfilled, (state, action) => {
         return INITIAL_STATE;
@@ -118,7 +140,8 @@ const authSlice = createSlice({
           userLogout.pending,
           newUserRegister.pending,
           userLogin.pending,
-          userRefresh.pending
+          userRefresh.pending,
+          userUpdateAvatar.pending
         ),
         state => {
           state.isLoading = true;
@@ -130,7 +153,8 @@ const authSlice = createSlice({
           userLogout.rejected,
           newUserRegister.rejected,
           userLogin.rejected,
-          userRefresh.rejected
+          userRefresh.rejected,
+          userUpdateAvatar.rejected
         ),
         (state, action) => {
           state.isLoading = false;
