@@ -15,8 +15,11 @@ export const StyledProfilePage = styled.div`
   }
 
   .profile-header {
-    font-size: 20px;
     margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 1.07;
+    letter-spacing: -0.02em;
+    color: var(--primary-black);
   }
   .profile-user-status {
     font-size: 14px;
@@ -54,6 +57,14 @@ export const StyledProfilePage = styled.div`
     flex-direction: column;
     gap: 20px;
     width: 100%;
+  }
+
+  .user-info-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.07;
+    letter-spacing: -0.02em;
+    color: var(--primary-black);
   }
   .input-label {
     display: block;

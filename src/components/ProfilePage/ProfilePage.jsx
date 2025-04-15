@@ -5,6 +5,7 @@ import { selectAuthUser } from 'redux/authSelectors';
 import { IconButton } from '@mui/material';
 import { userUpdateAvatar } from 'redux/authReducer';
 import { getCurrentAvatarUrl } from 'utils/helpers/avatarUrlCheck';
+import ResetPasswordForm from 'components/ResetPasswordForm/ResetPasswordForm';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const ProfilePage = () => {
           </label>
         </div>
         <div className="inputs-group">
+          <h3 className="user-info-title">Basic user information</h3>
           <div className="input-wrapper">
             <label htmlFor="name" className="input-label">
               Name
@@ -69,6 +71,7 @@ const ProfilePage = () => {
               disabled
             />
           </div>
+          <ResetPasswordForm />
         </div>
       </div>
     </StyledProfilePage>
