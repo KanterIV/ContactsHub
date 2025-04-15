@@ -3,11 +3,13 @@ import { StyledResetPasswordForm } from './ResetPasswordForm.styled';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { passwordSchema } from 'utils/helpers/schemas/passwordSchema';
-
-import { ReactComponent as IconError } from '../../assets/icons/error.svg';
+import { useDispatch } from 'react-redux';
 import Button from 'components/Button/Button';
+import { ReactComponent as IconError } from '../../assets/icons/error.svg';
+import { userPasswordChange } from 'redux/authReducer';
 
 const ResetPasswordForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -16,8 +18,8 @@ const ResetPasswordForm = () => {
   } = useForm({ resolver: yupResolver(passwordSchema), mode: 'onTouched' });
 
   const onSubmit = passwordData => {
-    console.log(123);
-    console.log(passwordData);
+    dispatch(userPasswordChange(passwordData));
+    reset();
   };
   return (
     <StyledResetPasswordForm>

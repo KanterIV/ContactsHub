@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   requestLogin,
   requestLogout,
+  requestPasswordChange,
   requestRefreshUser,
   requestRegistration,
   requestUserAvatarUpdate,
@@ -58,6 +59,20 @@ export const userRefresh = createAsyncThunk(
       if (!token) return false;
       return true;
     },
+  }
+);
+
+export const userPasswordChange = createAsyncThunk(
+  'auth/changePassword',
+  async (passwordData, thunkAPI) => {
+    try {
+      await requestPasswordChange(passwordData);
+      toastFulfild('Your password was successfully changed !');
+      return;
+    } catch (error) {
+      toastRejected('Something went wrong, please try again later!');
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );
 
@@ -125,6 +140,10 @@ const authSlice = createSlice({
         state.authenticated = true;
         state.user = action.payload;
       })
+      .addCase(userPasswordChange.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.authenticated = true;
+      })
       .addCase(userUpdateAvatar.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
@@ -141,7 +160,8 @@ const authSlice = createSlice({
           newUserRegister.pending,
           userLogin.pending,
           userRefresh.pending,
-          userUpdateAvatar.pending
+          userUpdateAvatar.pending,
+          userPasswordChange.pending
         ),
         state => {
           state.isLoading = true;
@@ -154,7 +174,8 @@ const authSlice = createSlice({
           newUserRegister.rejected,
           userLogin.rejected,
           userRefresh.rejected,
-          userUpdateAvatar.rejected
+          userUpdateAvatar.rejected,
+          userPasswordChange.rejected
         ),
         (state, action) => {
           state.isLoading = false;

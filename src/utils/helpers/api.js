@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const contactsInstances = axios.create({
-  // baseURL: 'https://contacts-reader-02va.onrender.com/api',
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://contacts-reader-02va.onrender.com/api',
+  // baseURL: 'http://localhost:5000/api',
 });
 
 export const setToken = token => {
@@ -23,6 +23,14 @@ export const requestLogin = async userData => {
 
 export const requestLogout = async () => {
   const { data } = await contactsInstances.post('/users/logout');
+  return data;
+};
+
+export const requestPasswordChange = async passwordData => {
+  const { data } = await contactsInstances.patch(
+    '/users/reset-password',
+    passwordData
+  );
   return data;
 };
 
