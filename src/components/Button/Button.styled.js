@@ -50,4 +50,12 @@ export const StyledButton = styled.button`
       height: 20px;
     }
   }
+
+  &.password-form-btn {
+    margin-top: 14px;
+
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+  }
 `;

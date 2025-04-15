@@ -22,7 +22,7 @@ const ResetPasswordForm = () => {
   return (
     <StyledResetPasswordForm>
       <h3 className="pasword-form-title">Password change</h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="" onSubmit={handleSubmit(onSubmit)}>
         <div className="password-input-wrapper">
           <label htmlFor="currentPassword" className="input-label">
             Current password
@@ -30,7 +30,9 @@ const ResetPasswordForm = () => {
           <input
             {...register('currentPassword')}
             id="currentPassword"
-            className={`input ${errors.currentPassword ? 'error-input' : ''} `}
+            className={`password-input ${
+              errors.currentPassword ? 'error-input' : ''
+            } `}
             type="text"
             placeholder="Enter your current password"
           />
@@ -41,14 +43,16 @@ const ResetPasswordForm = () => {
             </div>
           )}
         </div>
-        <div className="input-wrapper">
+        <div className="password-input-wrapper">
           <label htmlFor="newPassword" className="input-label">
             New password
           </label>
           <input
             {...register('newPassword')}
             id="newPassword"
-            className={`input ${errors.newPassword ? 'error-input' : ''} `}
+            className={`password-input ${
+              errors.newPassword ? 'error-input' : ''
+            } `}
             type="text"
             placeholder="Enter your new password"
           />
@@ -59,14 +63,16 @@ const ResetPasswordForm = () => {
             </div>
           )}
         </div>
-        <div className="input-wrapper">
+        <div className="password-input-wrapper">
           <label htmlFor="confirmPassword" className="input-label">
             Confirm new password
           </label>
           <input
             {...register('confirmPassword')}
             id="confirmPassword"
-            className={`input ${errors.confirmPassword ? 'error-input' : ''} `}
+            className={`password-input ${
+              errors.confirmPassword ? 'error-input' : ''
+            } `}
             type="text"
             placeholder="Confirm your new password"
           />
@@ -77,7 +83,7 @@ const ResetPasswordForm = () => {
             </div>
           )}
         </div>
-        <Button styledClass="form-btn contact-form-btn" buttonType="submit">
+        <Button styledClass="form-btn password-form-btn" buttonType="submit">
           Change password
         </Button>
       </form>
