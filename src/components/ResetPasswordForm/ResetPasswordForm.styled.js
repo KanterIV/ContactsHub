@@ -36,11 +36,7 @@ export const StyledResetPasswordForm = styled.div`
     &::placeholder {
       font-size: 14px;
       line-height: 1.37;
-      color: inherit;
-
-      @media screen and (min-width: 768px) {
-        font-size: 16px;
-      }
+      color: rgb(84, 84, 84);
     }
     &.error-input {
       border-color: var(--error-color);

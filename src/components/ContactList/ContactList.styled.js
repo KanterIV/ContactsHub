@@ -9,13 +9,12 @@ export const StyledContactsList = styled.ul`
   border-radius: 8px;
   background-color: var(--grey-modal);
 
-  @media screen and (max-width: 1439px) {
-    max-height: 250px;
+  @media screen and (min-width: 768px) {
+    height: 366px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 768px;
-    height: 365px;
   }
 
   .title-nothing {

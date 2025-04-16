@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledContactForm = styled.div`
+  height: 366px;
   padding: 26px 18px;
   border: 1px solid #dee2e6;
   border-radius: 8px;
