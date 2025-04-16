@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/ContactsHub/static/css/main.77aa162b.css",
-    "main.js": "/ContactsHub/static/js/main.4ec5a8e2.js",
+    "main.js": "/ContactsHub/static/js/main.2ad52eb1.js",
     "static/js/925.97a8629c.chunk.js": "/ContactsHub/static/js/925.97a8629c.chunk.js",
     "static/js/1.824e1916.chunk.js": "/ContactsHub/static/js/1.824e1916.chunk.js",
     "static/js/536.3ade52f5.chunk.js": "/ContactsHub/static/js/536.3ade52f5.chunk.js",
-    "static/js/802.deca5197.chunk.js": "/ContactsHub/static/js/802.deca5197.chunk.js",
-    "static/js/805.de7e199f.chunk.js": "/ContactsHub/static/js/805.de7e199f.chunk.js",
+    "static/js/802.b3e34573.chunk.js": "/ContactsHub/static/js/802.b3e34573.chunk.js",
+    "static/js/805.f8407786.chunk.js": "/ContactsHub/static/js/805.f8407786.chunk.js",
     "static/js/586.cb4d4175.chunk.js": "/ContactsHub/static/js/586.cb4d4175.chunk.js",
     "static/js/318.b77503ba.chunk.js": "/ContactsHub/static/js/318.b77503ba.chunk.js",
     "static/media/Roboto-Italic.ttf": "/ContactsHub/static/media/Roboto-Italic.87f3afe16a8c3c370634.ttf",
@@ -25,17 +25,17 @@
     "static/media/downarrow.svg": "/ContactsHub/static/media/downarrow.78e147ff430355be7c43a08bf924166a.svg",
     "static/media/plus.svg": "/ContactsHub/static/media/plus.8b36a880457901093cd616a1e179e095.svg",
     "main.77aa162b.css.map": "/ContactsHub/static/css/main.77aa162b.css.map",
-    "main.4ec5a8e2.js.map": "/ContactsHub/static/js/main.4ec5a8e2.js.map",
+    "main.2ad52eb1.js.map": "/ContactsHub/static/js/main.2ad52eb1.js.map",
     "925.97a8629c.chunk.js.map": "/ContactsHub/static/js/925.97a8629c.chunk.js.map",
     "1.824e1916.chunk.js.map": "/ContactsHub/static/js/1.824e1916.chunk.js.map",
     "536.3ade52f5.chunk.js.map": "/ContactsHub/static/js/536.3ade52f5.chunk.js.map",
-    "802.deca5197.chunk.js.map": "/ContactsHub/static/js/802.deca5197.chunk.js.map",
-    "805.de7e199f.chunk.js.map": "/ContactsHub/static/js/805.de7e199f.chunk.js.map",
+    "802.b3e34573.chunk.js.map": "/ContactsHub/static/js/802.b3e34573.chunk.js.map",
+    "805.f8407786.chunk.js.map": "/ContactsHub/static/js/805.f8407786.chunk.js.map",
     "586.cb4d4175.chunk.js.map": "/ContactsHub/static/js/586.cb4d4175.chunk.js.map",
     "318.b77503ba.chunk.js.map": "/ContactsHub/static/js/318.b77503ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77aa162b.css",
-    "static/js/main.4ec5a8e2.js"
+    "static/js/main.2ad52eb1.js"
   ]
 }
